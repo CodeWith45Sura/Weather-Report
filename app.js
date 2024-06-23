@@ -8,7 +8,7 @@ const humidity=document.getElementById("humidity");
 const icon=document.getElementById("icon");
 const submit=document.getElementById("submit");
 const input=document.getElementById("city");
-const mode=document.getElementById("mode");
+
 const Fact = async (city) => {
   const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+city+"?unitGroup=us&key=4TS3TKRAZGN6TDCCYZXJRSQ3F&contentType=json"
   );
@@ -31,19 +31,3 @@ submit.addEventListener("click",(e)=>{
 
 Fact("delhi");
 
-body.style.backgroundColor="rgba(150, 81, 214, 0.842) ";
-turnB=true;
-mode.addEventListener("click",()=>{
-  
-  if(turnB){
-    body.style.backgroundColor="rgba(150, 81, 214, 0.842)";
-    turnB=false;
-    body.style.backgroundColor="rgba(243, 243, 9, 0.916)";
-  }
-  else{
-    body.style.backgroundColor="rgba(243, 243, 9, 0.916)";
-    turnB=true;
-    body.style.backgroundColor="rgba(150, 81, 214, 0.842)";
-  
-  }
-})
